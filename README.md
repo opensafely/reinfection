@@ -1,8 +1,4 @@
-# OpenSAFELY Research Template
-
-This is a template repository for making new OpenSAFELY resarch projects.
-
-# _title goes here_
+# Reinfection with COVID-19
 
 This is the code and configuration for our paper, _name goes here_
 
