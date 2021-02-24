@@ -32,6 +32,15 @@ df = pd.read_csv(
     index_col="patient_id",
     parse_dates=["first_positive_date", "last_positive_date"],
 )
+time_between_positives = (df["last_positive_date"] - df["first_positive_date"]).dt.days
+df = df.loc[time_between_positives > 90]
+time_between_positives = time_between_positives.loc[time_between_positives > 90]
+bins = np.arange(0, 420, 30)
+ax = time_between_positives.hist(bins=bins, zorder=0)
+title = "Time between first and last positive test"
+ax.set_xlabel("Time since first positive test (days)")
+generic_graph_settings()
+plt.savefig("output/interval_between_positives.svg")
 
 ##
 monthly_counts = (
@@ -44,12 +53,3 @@ ax.xaxis.label.set_visible(False)
 generic_graph_settings()
 plt.savefig("output/repeated_positive_date.svg")
 plt.close()
-
-
-time_between_positives = (df["last_positive_date"] - df["first_positive_date"]).dt.days
-bins = np.arange(0, 420, 30)
-ax = time_between_positives.hist(bins=bins, zorder=0)
-title = "Time between first and last positive test"
-ax.set_xlabel("Time since first positive test (days)")
-generic_graph_settings()
-plt.savefig("output/interval_between_positives.svg")
