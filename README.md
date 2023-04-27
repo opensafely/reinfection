@@ -1,6 +1,6 @@
 # Exploration of reinfections with COVID-19
 
-[View on OpenSAFELY](https://jobs.opensafely.org/staff/repos/https%253A%252F%252Fgithub.com%252Fopensafely%252Freinfection/)
+[View on OpenSAFELY](https://jobs.opensafely.org/datalab/covid-19-reinfection/)
 
 Details of the purpose and any published outputs from this project can be found at the link above.
 
